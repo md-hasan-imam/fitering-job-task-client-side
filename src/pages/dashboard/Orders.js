@@ -10,10 +10,7 @@ const Orders = () => {
     const [searchedText, setSearchedText] = useState('');
     const [date, setDate] = useState('');
 
-    console.log(date);
-
-
-    const { data:orders, isLoading } = useQuery(['orders',searchedText, date ],()=>fetch(`http://localhost:5000/orders?searchedText=${searchedText}&date=${date}`).then(res => res.json()));
+    const { data:orders, isLoading } = useQuery(['orders',searchedText, date ],()=>fetch(`https://filtering-job-task-server-side.onrender.com/orders?searchedText=${searchedText}&date=${date}`).then(res => res.json()));
 
 
     return (
